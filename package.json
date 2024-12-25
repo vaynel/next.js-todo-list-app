@@ -9,17 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@reduxjs/toolkit": "^2.5.0",
+    "firebase": "^11.1.0",
+    "next": "15.1.2",
+    "next-pwa": "^5.6.0",
+    "pwa": "^1.9.7",
     "react": "^19.0.0",
+    "react-calendar": "^5.1.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.2"
+    "react-icons": "^5.4.0",
+    "react-redux": "^9.2.0",
+    "styled-components": "^6.1.13",
+    "todo-list-app": "file:"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@types/next-pwa": "^5.6.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }
