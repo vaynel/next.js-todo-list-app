@@ -59,6 +59,12 @@ const TodoList: React.FC<TodoListProps> = ({ selectedDate }) => {
   // booleanToString 함수 정의
   const booleanToString = (value: boolean): string => value.toString();
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key == 'Enter') {
+      handleAddTodo();
+    }
+  };
+
   return (
     <TodoContainer>
       <Header>{selectedDate}의 Todo</Header>
@@ -68,6 +74,7 @@ const TodoList: React.FC<TodoListProps> = ({ selectedDate }) => {
           placeholder="할 일을 입력하세요..."
           value={task}
           onChange={(e) => setTask(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <AddButton onClick={handleAddTodo}>추가</AddButton>
       </InputContainer>
