@@ -25,17 +25,14 @@ const TodoList: React.FC<TodoListProps> = ({ selectedDate }) => {
   const todos = useSelector((state: RootState) => state.todo.todos);
   const dispatch: AppDispatch = useDispatch();
   const [task, setTask] = useState('');
-  const [loading, setLoading] = useState(false); // 로딩 상태 추가
   const auth = getAuth();
   const router = useRouter();
 
   useEffect(() => {
     const user = auth.currentUser;
     if (!user) {
-      setLoading(true); // 로딩 시작
       alert('사용자가 로그인되어 있지 않습니다. 로그인 페이지로 이동합니다.');
       setTimeout(() => {
-        setLoading(false); // 로딩 종료
         router.push('/login'); // 로그인 페이지로 이동
       }, 1000);
       return;
@@ -165,13 +162,4 @@ const DeleteButton = styled.button`
   &:hover {
     background-color: #a71d2a;
   }
-`;
-
-const LoadingScreen = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 24px;
-  color: ${({ theme }) => theme.colors.primary};
 `;

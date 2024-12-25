@@ -41,7 +41,7 @@ const LoginPage = () => {
       router.push('/todos');
     } catch (err) {
       alert('로그인 실패! 이메일 또는 비밀번호를 확인하세요.'); // 실패 시 alert
-      setError('로그인 실패! 이메일 또는 비밀번호를 확인하세요.');
+      setError(`로그인 실패! 이메일 또는 비밀번호를 확인하세요.\n ${err}`);
     } finally {
       dispatch(stopLoading()); // 전역 로딩 종료
     }
@@ -165,15 +165,5 @@ const ErrorMessage = styled.p`
 
   @media (max-width: 768px) {
     font-size: 12px;
-  }
-`;
-
-const LoadingScreen = styled.div`
-  font-size: 18px;
-  font-weight: bold;
-  color: #007bff;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
   }
 `;
